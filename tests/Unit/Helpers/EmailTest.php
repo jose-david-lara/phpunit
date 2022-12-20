@@ -2,6 +2,7 @@
 
 namespace Tests\Unit\Helpers;
 
+use App\Helpers\Email;
 use PHPUnit\Framework\TestCase;
 
 class EmailTest extends TestCase
@@ -13,8 +14,10 @@ class EmailTest extends TestCase
      */
     public function test_email()
     {
-        $email = 'jose@hotmail.com';
-        $result = (bool) filter_var($email,FILTER_VALIDATE_EMAIL);
+        //$email = 'jose@hotmail.com';
+        //$result = (bool) filter_var($email,FILTER_VALIDATE_EMAIL);
+        $result = Email::validate('jose@hotmail.com');
+
         $this->assertTrue($result);
     }
 }
